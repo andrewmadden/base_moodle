@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -18,7 +18,8 @@ RUN apt-get update -y \
     php-mbstring \
     php-zip \
     locales \
-    vim
+    vim \
+    git
 
 RUN locale-gen en_AU.UTF-8
 
@@ -35,9 +36,9 @@ COPY nginx-site.conf /etc/nginx/sites-available/default
 RUN rm /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY 99-xdebug.ini /etc/php/7.4/mods-available/xdebug.ini
+COPY 99-xdebug.ini /etc/php/7.2/mods-available/xdebug.ini
 
 COPY .bash_docker /root/.bashrc
-COPY php.ini /etc/php/7.4/fpm/php.ini
+COPY php.ini /etc/php/7.2/fpm/php.ini
 
-CMD service php7.4-fpm start && nginx
+CMD service php7.2-fpm start && nginx
