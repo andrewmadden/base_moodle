@@ -18,7 +18,10 @@ RUN apt-get update -y \
     php-mbstring \
     php-zip \
     locales \
-    vim
+    vim \
+    git \
+    php-tideways \
+    graphviz
 
 RUN locale-gen en_AU.UTF-8
 
