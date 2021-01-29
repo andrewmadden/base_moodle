@@ -19,7 +19,8 @@ RUN apt-get update -y \
     php-zip \
     locales \
     vim \
-    git
+    git \
+    php-tideways
 
 RUN locale-gen en_AU.UTF-8
 
