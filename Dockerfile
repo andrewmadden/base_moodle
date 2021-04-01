@@ -3,24 +3,30 @@ FROM ubuntu:18.04
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y \
-    && apt-get install -y nginx \
-    php-fpm \
-    php-pgsql \
-    php-xdebug \
+    && apt-get install -y \
     curl \
-    php-curl \
-    php-gd \
-    php-soap \
-    php-intl \
-    php-xmlrpc \
-    php-ldap \
-    php-xml \
-    php-mbstring \
-    php-zip \
-    locales \
-    vim \
     git \
-    php-tideways
+    graphviz \
+    locales \
+    nginx \
+    php \
+    php-bcmath \
+    php-cli \
+    php-curl \
+    php-fpm \
+    php-gd \
+    php-intl \
+    php-ldap \
+    php-mbstring \
+    php-mysql \
+    php-pgsql \
+    php-soap \
+    php-tideways \
+    php-xdebug \
+    php-xml \
+    php-xmlrpc \
+    php-zip \
+    vim
 
 RUN locale-gen en_AU.UTF-8
 
